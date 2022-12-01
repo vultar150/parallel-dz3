@@ -1,7 +1,12 @@
+np?=1
+
 all: compile
 
-compile: main.c
-	mpicc -std=c99 main.c -lm
+compile: main.cpp
+	mpicxx main.cpp
+
+run: 
+	mpirun -np $(np) ./a.out
 
 clean:
 	rm -rf a.out
