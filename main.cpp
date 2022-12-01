@@ -144,9 +144,7 @@ public:
         it++;
         
         Step1();
-        PreparePlanesToSend(p_n);
-        ExchangeData(p_n);
-        CopyAfterRecieve(p_n);
+        ExchangePlanes_X(p_n);
         t = tau * it;
         local_eps = GetEps(p_n, t);
         MPI_Reduce(&local_eps, &global_eps, 1, MPI_DOUBLE, 
@@ -155,10 +153,11 @@ public:
         it++;
 
         while (it <= max_it) {
+            PreparePlanes_Y_Z_ToSend(p_n);
+            ExchangePlanes_Y_Z();
+            CopyPlanes_Y_Z_AfterRecieve(p_n);
             StepN();
-            PreparePlanesToSend(n);
-            ExchangeData(n);
-            CopyAfterRecieve(n);
+            ExchangePlanes_X(n);
             t = tau * it;
             local_eps = GetEps(n, t);
             MPI_Reduce(&local_eps, &global_eps, 1, MPI_DOUBLE, 
@@ -249,7 +248,12 @@ private:
         }
     }
 
-    void PreparePlanesToSend(uint32_t ln) {
+    void PreparePlanes_Y_Z_ToSend(uint32_t ln) {
+        PreparePlanes_Y_ToSend(ln);
+        PreparePlanes_Z_ToSend(ln);
+    }
+
+    void PreparePlanes_Y_ToSend(uint32_t ln) {
         if (coords[1] > 0) {
             for (uint32_t i = 0; i < Nx; ++i) {
                 for (uint32_t k = 0; k < Nz; ++k) {
@@ -264,7 +268,9 @@ private:
                 }
             }    
         }
+    }
 
+    void PreparePlanes_Z_ToSend(uint32_t ln) {
         if (coords[2] > 0) {
             for (uint32_t i = 0; i < Nx; ++i) {
                 for (uint32_t j = 0; j < Ny; ++j) {
@@ -282,7 +288,12 @@ private:
         }
     }
 
-    void CopyAfterRecieve(uint32_t ln) {
+    void CopyPlanes_Y_Z_AfterRecieve(uint32_t ln) { 
+        CopyPlanes_Y_AfterRecieve(ln);
+        CopyPlanes_Z_AfterRecieve(ln);
+    }
+
+    void CopyPlanes_Y_AfterRecieve(uint32_t ln) {
         if (coords[1] > 0) {
             for (uint32_t i = 0; i < Nx; ++i) {
                 for (uint32_t k = 0; k < Nz; ++k) {
@@ -297,7 +308,9 @@ private:
                 }
             }    
         }
+    }
 
+    void CopyPlanes_Z_AfterRecieve(uint32_t ln) {
         if (coords[2] > 0) {
             for (uint32_t i = 0; i < Nx; ++i) {
                 for (uint32_t j = 0; j < Ny; ++j) {
@@ -315,13 +328,12 @@ private:
         }
     }
 
-    void ExchangeData(uint32_t ln) {
-        ExchangeX(ln);
-        ExchangeY();
-        ExchangeZ();
+    void ExchangePlanes_Y_Z() {
+        ExchangePlanes_Y();
+        ExchangePlanes_Z();
     }
 
-    void ExchangeX(uint32_t ln) {
+    void ExchangePlanes_X(uint32_t ln) {
         int rank_recv, rank_send;
         MPI_Status status;
         MPI_Cart_shift(GRID_COMM, 0, -1, &rank_recv, &rank_send);
@@ -339,7 +351,7 @@ private:
                      GRID_COMM, &status);
     }
 
-    void ExchangeY() {
+    void ExchangePlanes_Y() {
         int rank_recv, rank_send;
         MPI_Status status;
         MPI_Cart_shift(GRID_COMM, 1, -1, &rank_recv, &rank_send);
@@ -369,7 +381,7 @@ private:
         } 
     }
 
-    void ExchangeZ() {
+    void ExchangePlanes_Z() {
         int rank_recv, rank_send;
         MPI_Status status;
         MPI_Cart_shift(GRID_COMM, 2, -1, &rank_recv, &rank_send);
