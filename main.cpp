@@ -16,14 +16,14 @@
 
 #define SIZE 128
 
-const uint32_t SIZE_X = SIZE;
-const uint32_t SIZE_Y = SIZE;
-const uint32_t SIZE_Z = SIZE;
+uint32_t SIZE_X = SIZE;
+uint32_t SIZE_Y = SIZE;
+uint32_t SIZE_Z = SIZE;
 const double T = 1.0;
 
 /* tau = T / MAX_IT must be <= h / 3^(1/3)
  * where h = L / (SIZE - 1) */
-const uint32_t MAX_IT = 220;
+const uint32_t MAX_IT = 1000;
 
 double Lx = 1.0, Ly = 1.0, Lz = 1.0;
 double hx, hy, hz;
@@ -435,10 +435,13 @@ private:
 
 void ParseAndInit(int argc, char **argv, const int num_procs[],
                     const int coords[], uint32_t &Nx, uint32_t &Ny, uint32_t &Nz) {
-    if (argc >= 4) {
+    if (argc >= 7) {
         sscanf(argv[1], "%lf", &Lx);
         sscanf(argv[2], "%lf", &Ly);
         sscanf(argv[3], "%lf", &Lz);
+	sscanf(argv[4], "%d", &SIZE_X);
+	sscanf(argv[5], "%d", &SIZE_Y);
+	sscanf(argv[6], "%d", &SIZE_Z);
     }
     a_t = M_PI * sqrt(4.0 / (Lx * Lx) + 1.0 / (Ly * Ly) + 1.0 / (Lz * Lz));
     hx = Lx / (double) (SIZE_X - 1);
@@ -498,8 +501,17 @@ int main(int argc, char **argv) {
     MPI_Cart_coords(GRID_COMM, rank, 3, coords);
 
     ParseAndInit(argc, argv, num_procs, coords, Nx, Ny, Nz);
+    double start_time = MPI_Wtime();
     Process P(Nx, Ny, Nz, rank, num_procs, coords, T, MAX_IT, GRID_COMM);
     P.Solve();
+    double time = MPI_Wtime() - start_time, global_time;
+    MPI_Reduce(&time, &global_time, 1, MPI_DOUBLE, 
+		MPI_MAX, 0, GRID_COMM);
+    if (rank == 0) {
+	printf("Num processes = [%d, %d, %d]\n", num_procs[0], num_procs[1], num_procs[2]);
+	printf("time = %lf\n", global_time);
+    }
+    
 
     MPI_Finalize();
     return 0;
