@@ -1,12 +1,7 @@
-np?=1
-
 all: compile
 
 compile: main.cpp
-	mpicxx main.cpp
-
-run: 
-	mpirun -np $(np) ./a.out
+	mpicxx -O3  -std=c++11  main.cpp
 
 clean:
 	rm -rf a.out
