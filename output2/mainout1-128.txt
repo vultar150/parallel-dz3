@@ -1,0 +1,59 @@
+Sender: LSF System <lsfadmin@polus-c4-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 975779: <# this file was automaticly created by mpisubmit.pl script for edu-cmc-skmodel22-621-04 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 1;#BSUB -W 00:15;#BSUB -o output/mainout1-128.txt;#BSUB -e err/mainerr1-128.txt;OMP_NUM_THREADS=1 mpiexec a.out> in cluster <MSUCluster> Exited
+
+Job <# this file was automaticly created by mpisubmit.pl script for edu-cmc-skmodel22-621-04 #;source /polusfs/setenv/setup.SMPI;#BSUB -n 1;#BSUB -W 00:15;#BSUB -o output/mainout1-128.txt;#BSUB -e err/mainerr1-128.txt;OMP_NUM_THREADS=1 mpiexec a.out> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel22-621-04> in cluster <MSUCluster> at Thu Dec  1 22:45:59 2022
+Job was executed on host(s) <polus-c4-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-skmodel22-621-04> in cluster <MSUCluster> at Thu Dec  1 22:46:00 2022
+</home_edu/edu-cmc-skmodel22-621/edu-cmc-skmodel22-621-04> was used as the home directory.
+</home_edu/edu-cmc-skmodel22-621/edu-cmc-skmodel22-621-04/parallel-dz3> was used as the working directory.
+Started at Thu Dec  1 22:46:00 2022
+Terminated at Thu Dec  1 22:46:01 2022
+Results reported at Thu Dec  1 22:46:01 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+# this file was automaticly created by mpisubmit.pl script for edu-cmc-skmodel22-621-04 #
+source /polusfs/setenv/setup.SMPI
+#BSUB -n 1
+#BSUB -W 00:15
+#BSUB -o output/mainout1-128.txt
+#BSUB -e err/mainerr1-128.txt
+OMP_NUM_THREADS=1 mpiexec a.out
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.22 sec.
+    Max Memory :                                 1 MB
+    Average Memory :                             1.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              1
+    Max Threads :                                1
+    Run time :                                   7 sec.
+    Turnaround time :                            2 sec.
+
+The output (if any) follows:
+
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpiexec detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[33539,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
+
+
+PS:
+
+Read file <err/mainerr1-128.txt> for stderr output of this job.
+
