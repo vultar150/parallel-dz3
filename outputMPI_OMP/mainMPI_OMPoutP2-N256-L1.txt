@@ -1,0 +1,264 @@
+Sender: LSF System <lsfadmin@polus-c2-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 984748: <#BSUB -n 2;#BSUB -W 00:15;#BSUB -o outputMPI_OMP/mainMPI_OMPoutP2-N256-L1.txt;#BSUB -e errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt;#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=4;mpiexec ./mainMPI_OMP 1.0 1.0 1.0 256 256 256> in cluster <MSUCluster> Done
+
+Job <#BSUB -n 2;#BSUB -W 00:15;#BSUB -o outputMPI_OMP/mainMPI_OMPoutP2-N256-L1.txt;#BSUB -e errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt;#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=4;mpiexec ./mainMPI_OMP 1.0 1.0 1.0 256 256 256> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel22-621-04> in cluster <MSUCluster> at Fri Dec  9 17:54:32 2022
+Job was executed on host(s) <2*polus-c2-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-skmodel22-621-04> in cluster <MSUCluster> at Fri Dec  9 17:54:33 2022
+</home_edu/edu-cmc-skmodel22-621/edu-cmc-skmodel22-621-04> was used as the home directory.
+</home_edu/edu-cmc-skmodel22-621/edu-cmc-skmodel22-621-04/parallel-dz3> was used as the working directory.
+Started at Fri Dec  9 17:54:33 2022
+Terminated at Fri Dec  9 17:54:39 2022
+Results reported at Fri Dec  9 17:54:39 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 2
+#BSUB -W 00:15
+#BSUB -o outputMPI_OMP/mainMPI_OMPoutP2-N256-L1.txt
+#BSUB -e errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt
+#BSUB -R "affinity[core(4)]"
+OMP_NUM_THREADS=4
+mpiexec ./mainMPI_OMP 1.0 1.0 1.0 256 256 256
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   36.41 sec.
+    Max Memory :                                 519 MB
+    Average Memory :                             346.33 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                21
+    Run time :                                   6 sec.
+    Turnaround time :                            7 sec.
+
+The output (if any) follows:
+
+t = 0.000000, it = 0, eps = 0.0000000000
+t = 0.001000, it = 1, eps = 0.0000000010
+t = 0.002000, it = 2, eps = 0.0000000039
+t = 0.003000, it = 3, eps = 0.0000000088
+t = 0.004000, it = 4, eps = 0.0000000156
+t = 0.005000, it = 5, eps = 0.0000000244
+t = 0.006000, it = 6, eps = 0.0000000352
+t = 0.007000, it = 7, eps = 0.0000000479
+t = 0.008000, it = 8, eps = 0.0000000625
+t = 0.009000, it = 9, eps = 0.0000000791
+t = 0.010000, it = 10, eps = 0.0000000976
+t = 0.011000, it = 11, eps = 0.0000001181
+t = 0.012000, it = 12, eps = 0.0000001405
+t = 0.013000, it = 13, eps = 0.0000001649
+t = 0.014000, it = 14, eps = 0.0000001912
+t = 0.015000, it = 15, eps = 0.0000002194
+t = 0.016000, it = 16, eps = 0.0000002496
+t = 0.017000, it = 17, eps = 0.0000002816
+t = 0.018000, it = 18, eps = 0.0000003156
+t = 0.019000, it = 19, eps = 0.0000003516
+t = 0.020000, it = 20, eps = 0.0000003894
+t = 0.021000, it = 21, eps = 0.0000004291
+t = 0.022000, it = 22, eps = 0.0000004708
+t = 0.023000, it = 23, eps = 0.0000005143
+t = 0.024000, it = 24, eps = 0.0000005598
+t = 0.025000, it = 25, eps = 0.0000006071
+t = 0.026000, it = 26, eps = 0.0000006563
+t = 0.027000, it = 27, eps = 0.0000007074
+t = 0.028000, it = 28, eps = 0.0000007603
+t = 0.029000, it = 29, eps = 0.0000008151
+t = 0.030000, it = 30, eps = 0.0000008718
+t = 0.031000, it = 31, eps = 0.0000009303
+t = 0.032000, it = 32, eps = 0.0000009907
+t = 0.033000, it = 33, eps = 0.0000010529
+t = 0.034000, it = 34, eps = 0.0000011170
+t = 0.035000, it = 35, eps = 0.0000011828
+t = 0.036000, it = 36, eps = 0.0000012505
+t = 0.037000, it = 37, eps = 0.0000013200
+t = 0.038000, it = 38, eps = 0.0000013913
+t = 0.039000, it = 39, eps = 0.0000014643
+t = 0.040000, it = 40, eps = 0.0000015392
+t = 0.041000, it = 41, eps = 0.0000016158
+t = 0.042000, it = 42, eps = 0.0000016942
+t = 0.043000, it = 43, eps = 0.0000017743
+t = 0.044000, it = 44, eps = 0.0000018562
+t = 0.045000, it = 45, eps = 0.0000019398
+t = 0.046000, it = 46, eps = 0.0000020251
+t = 0.047000, it = 47, eps = 0.0000021122
+t = 0.048000, it = 48, eps = 0.0000022009
+t = 0.049000, it = 49, eps = 0.0000022914
+t = 0.050000, it = 50, eps = 0.0000023835
+t = 0.051000, it = 51, eps = 0.0000024773
+t = 0.052000, it = 52, eps = 0.0000025728
+t = 0.053000, it = 53, eps = 0.0000026699
+t = 0.054000, it = 54, eps = 0.0000027686
+t = 0.055000, it = 55, eps = 0.0000028690
+t = 0.056000, it = 56, eps = 0.0000029709
+t = 0.057000, it = 57, eps = 0.0000030745
+t = 0.058000, it = 58, eps = 0.0000031797
+t = 0.059000, it = 59, eps = 0.0000032864
+t = 0.060000, it = 60, eps = 0.0000033947
+t = 0.061000, it = 61, eps = 0.0000035046
+t = 0.062000, it = 62, eps = 0.0000036160
+t = 0.063000, it = 63, eps = 0.0000037289
+t = 0.064000, it = 64, eps = 0.0000038433
+t = 0.065000, it = 65, eps = 0.0000039592
+t = 0.066000, it = 66, eps = 0.0000040766
+t = 0.067000, it = 67, eps = 0.0000041955
+t = 0.068000, it = 68, eps = 0.0000043158
+t = 0.069000, it = 69, eps = 0.0000044375
+t = 0.070000, it = 70, eps = 0.0000045607
+t = 0.071000, it = 71, eps = 0.0000046853
+t = 0.072000, it = 72, eps = 0.0000048113
+t = 0.073000, it = 73, eps = 0.0000049386
+t = 0.074000, it = 74, eps = 0.0000050673
+t = 0.075000, it = 75, eps = 0.0000051974
+t = 0.076000, it = 76, eps = 0.0000053288
+t = 0.077000, it = 77, eps = 0.0000054615
+t = 0.078000, it = 78, eps = 0.0000055955
+t = 0.079000, it = 79, eps = 0.0000057307
+t = 0.080000, it = 80, eps = 0.0000058673
+Num processes = [2, 1, 1]
+time = 4.564390
+
+
+PS:
+
+Read file <errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt> for stderr output of this job.
+
+Sender: LSF System <lsfadmin@polus-c2-ib.bmc.hpc.cs.msu.ru>
+Subject: Job 984751: <#BSUB -n 2;#BSUB -W 00:15;#BSUB -o outputMPI_OMP/mainMPI_OMPoutP2-N256-L1.txt;#BSUB -e errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt;#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=4;mpiexec ./mainMPI_OMP 1.0 1.0 1.0 256 256 256> in cluster <MSUCluster> Done
+
+Job <#BSUB -n 2;#BSUB -W 00:15;#BSUB -o outputMPI_OMP/mainMPI_OMPoutP2-N256-L1.txt;#BSUB -e errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt;#BSUB -R "affinity[core(4)]";OMP_NUM_THREADS=4;mpiexec ./mainMPI_OMP 1.0 1.0 1.0 256 256 256> was submitted from host <polus-ib.bmc.hpc.cs.msu.ru> by user <edu-cmc-skmodel22-621-04> in cluster <MSUCluster> at Fri Dec  9 17:56:49 2022
+Job was executed on host(s) <2*polus-c2-ib.bmc.hpc.cs.msu.ru>, in queue <short>, as user <edu-cmc-skmodel22-621-04> in cluster <MSUCluster> at Fri Dec  9 17:56:49 2022
+</home_edu/edu-cmc-skmodel22-621/edu-cmc-skmodel22-621-04> was used as the home directory.
+</home_edu/edu-cmc-skmodel22-621/edu-cmc-skmodel22-621-04/parallel-dz3> was used as the working directory.
+Started at Fri Dec  9 17:56:49 2022
+Terminated at Fri Dec  9 17:56:54 2022
+Results reported at Fri Dec  9 17:56:54 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#BSUB -n 2
+#BSUB -W 00:15
+#BSUB -o outputMPI_OMP/mainMPI_OMPoutP2-N256-L1.txt
+#BSUB -e errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt
+#BSUB -R "affinity[core(4)]"
+OMP_NUM_THREADS=4
+mpiexec ./mainMPI_OMP 1.0 1.0 1.0 256 256 256
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   36.37 sec.
+    Max Memory :                                 519 MB
+    Average Memory :                             346.33 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                21
+    Run time :                                   5 sec.
+    Turnaround time :                            5 sec.
+
+The output (if any) follows:
+
+t = 0.000000, it = 0, eps = 0.0000000000
+t = 0.001000, it = 1, eps = 0.0000000010
+t = 0.002000, it = 2, eps = 0.0000000039
+t = 0.003000, it = 3, eps = 0.0000000088
+t = 0.004000, it = 4, eps = 0.0000000156
+t = 0.005000, it = 5, eps = 0.0000000244
+t = 0.006000, it = 6, eps = 0.0000000352
+t = 0.007000, it = 7, eps = 0.0000000479
+t = 0.008000, it = 8, eps = 0.0000000625
+t = 0.009000, it = 9, eps = 0.0000000791
+t = 0.010000, it = 10, eps = 0.0000000976
+t = 0.011000, it = 11, eps = 0.0000001181
+t = 0.012000, it = 12, eps = 0.0000001405
+t = 0.013000, it = 13, eps = 0.0000001649
+t = 0.014000, it = 14, eps = 0.0000001912
+t = 0.015000, it = 15, eps = 0.0000002194
+t = 0.016000, it = 16, eps = 0.0000002496
+t = 0.017000, it = 17, eps = 0.0000002816
+t = 0.018000, it = 18, eps = 0.0000003156
+t = 0.019000, it = 19, eps = 0.0000003516
+t = 0.020000, it = 20, eps = 0.0000003894
+t = 0.021000, it = 21, eps = 0.0000004291
+t = 0.022000, it = 22, eps = 0.0000004708
+t = 0.023000, it = 23, eps = 0.0000005143
+t = 0.024000, it = 24, eps = 0.0000005598
+t = 0.025000, it = 25, eps = 0.0000006071
+t = 0.026000, it = 26, eps = 0.0000006563
+t = 0.027000, it = 27, eps = 0.0000007074
+t = 0.028000, it = 28, eps = 0.0000007603
+t = 0.029000, it = 29, eps = 0.0000008151
+t = 0.030000, it = 30, eps = 0.0000008718
+t = 0.031000, it = 31, eps = 0.0000009303
+t = 0.032000, it = 32, eps = 0.0000009907
+t = 0.033000, it = 33, eps = 0.0000010529
+t = 0.034000, it = 34, eps = 0.0000011170
+t = 0.035000, it = 35, eps = 0.0000011828
+t = 0.036000, it = 36, eps = 0.0000012505
+t = 0.037000, it = 37, eps = 0.0000013200
+t = 0.038000, it = 38, eps = 0.0000013913
+t = 0.039000, it = 39, eps = 0.0000014643
+t = 0.040000, it = 40, eps = 0.0000015392
+t = 0.041000, it = 41, eps = 0.0000016158
+t = 0.042000, it = 42, eps = 0.0000016942
+t = 0.043000, it = 43, eps = 0.0000017743
+t = 0.044000, it = 44, eps = 0.0000018562
+t = 0.045000, it = 45, eps = 0.0000019398
+t = 0.046000, it = 46, eps = 0.0000020251
+t = 0.047000, it = 47, eps = 0.0000021122
+t = 0.048000, it = 48, eps = 0.0000022009
+t = 0.049000, it = 49, eps = 0.0000022914
+t = 0.050000, it = 50, eps = 0.0000023835
+t = 0.051000, it = 51, eps = 0.0000024773
+t = 0.052000, it = 52, eps = 0.0000025728
+t = 0.053000, it = 53, eps = 0.0000026699
+t = 0.054000, it = 54, eps = 0.0000027686
+t = 0.055000, it = 55, eps = 0.0000028690
+t = 0.056000, it = 56, eps = 0.0000029709
+t = 0.057000, it = 57, eps = 0.0000030745
+t = 0.058000, it = 58, eps = 0.0000031797
+t = 0.059000, it = 59, eps = 0.0000032864
+t = 0.060000, it = 60, eps = 0.0000033947
+t = 0.061000, it = 61, eps = 0.0000035046
+t = 0.062000, it = 62, eps = 0.0000036160
+t = 0.063000, it = 63, eps = 0.0000037289
+t = 0.064000, it = 64, eps = 0.0000038433
+t = 0.065000, it = 65, eps = 0.0000039592
+t = 0.066000, it = 66, eps = 0.0000040766
+t = 0.067000, it = 67, eps = 0.0000041955
+t = 0.068000, it = 68, eps = 0.0000043158
+t = 0.069000, it = 69, eps = 0.0000044375
+t = 0.070000, it = 70, eps = 0.0000045607
+t = 0.071000, it = 71, eps = 0.0000046853
+t = 0.072000, it = 72, eps = 0.0000048113
+t = 0.073000, it = 73, eps = 0.0000049386
+t = 0.074000, it = 74, eps = 0.0000050673
+t = 0.075000, it = 75, eps = 0.0000051974
+t = 0.076000, it = 76, eps = 0.0000053288
+t = 0.077000, it = 77, eps = 0.0000054615
+t = 0.078000, it = 78, eps = 0.0000055955
+t = 0.079000, it = 79, eps = 0.0000057307
+t = 0.080000, it = 80, eps = 0.0000058673
+Num processes = [2, 1, 1]
+time = 4.562495
+
+
+PS:
+
+Read file <errMPI_OMP/mainMPI_OMPerrP2-N256-L1.txt> for stderr output of this job.
+
